@@ -1,1 +1,15 @@
-trhtyh
+name: Terraform
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  terraform:
+    name: 'Terraform'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      
+    - name: List files
+      uses: ls -la
