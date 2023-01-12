@@ -10,11 +10,13 @@ terraform {
     key    = "dev/network/terraform.tfstate"
     region = "us-east-1"
   }
+  depends_on = [aws_instance.my_ubuntu]
 }
 
 resource "aws_instance" "my_ubuntu" {
   ami           = "ami-06878d265978313ca"
   instance_type = "t2.micro"
+  depends_on = [aws_s3_bucket.my_bucket]
 
   tags = {
     Name    = "My Ubuntu server"
