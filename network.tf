@@ -6,7 +6,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = aws_s3_bucket.my_bucket.id
+    bucket = "david-terraform-bucket-hakobyan"
     key    = "dev/network/terraform.tfstate"
     region = "us-east-1"
   }
