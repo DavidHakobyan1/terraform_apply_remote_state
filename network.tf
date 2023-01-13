@@ -1,13 +1,3 @@
-terraform {
-  cloud {
-    organization = "David_Hakobyan"
-
-    workspaces {
-      name = "gh-actions-demo"
-    }
-  }
-}
-
 provider "aws" {
   region     = "us-east-1"
 }
