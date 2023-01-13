@@ -26,7 +26,8 @@ jobs:
     - name: Terraform Destroy
       run: |
         terraform plan -destroy -target=aws_s3_bucket.terraform_state
-        terraform destroy -auto-approve
+        terraform destroy -target=aws_s3_bucket.terraform_state
+        terraform apply -auto-approve
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         TF_ACTION_WORKING_DIR: '.'
