@@ -17,3 +17,8 @@ resource "aws_s3_bucket" "terraform_state" {
     enabled = true
   }
 }
+
+resource "aws_instance" "my_ubuntu" {
+  ami           = "ami-06878d265978313ca"
+  instance_type = "t2.micro"
+}
