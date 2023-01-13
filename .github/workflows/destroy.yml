@@ -25,9 +25,9 @@ jobs:
     
     - name: Terraform Destroy
       run: |
-        aws s3 rm s3://aws_s3_bucket.terraform_state --recursive
-        #terraform destroy -target=aws_s3_bucket.terraform_state -auto-approve
-        terraform destroy -auto-approve
+        #terraform apply -auto-approve
+        terraform plan -destroy -target=aws_s3_bucket.terraform_state -auto-approve
+        #terraform destroy -auto-approve
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         TF_ACTION_WORKING_DIR: '.'
