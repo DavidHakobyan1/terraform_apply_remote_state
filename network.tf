@@ -12,11 +12,11 @@ resource "aws_instance" "my_ubuntu" {
   }
 }
 
-terraform {
-  backend "s3" {
-    bucket = "david-terraform-bucket-hakobyan"
-    key    = "dev/network/terraform.tfstate"
-    region = "us-east-1"
-  }
-}
+#terraform {
+#  backend "s3" {
+#    bucket = "david-terraform-bucket-hakobyan"
+#    key    = "dev/network/terraform.tfstate"
+#    region = "us-east-1"
+#  }
+#}
 
