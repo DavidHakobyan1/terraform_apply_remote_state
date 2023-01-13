@@ -1,4 +1,14 @@
 terraform {
+  cloud {
+    organization = "David_Hakobyan"
+
+    workspaces {
+      name = "gh-actions-demo"
+    }
+  }
+}
+
+terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
