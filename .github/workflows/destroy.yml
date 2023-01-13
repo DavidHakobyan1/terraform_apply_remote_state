@@ -24,7 +24,9 @@ jobs:
         AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     
     - name: Terraform Destroy
-      run: terraform destroy -auto-approve
+      run: |
+        terraform destroy -target=aws_s3_bucket.terraform_state -auto-approve
+        #terraform destroy -auto-approve
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         TF_ACTION_WORKING_DIR: '.'
