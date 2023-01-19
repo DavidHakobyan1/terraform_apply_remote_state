@@ -85,13 +85,13 @@ terraform {
   }
 }
 
-resource "aws_s3_bucket" "terraform_state" {
-  bucket = "david-terraform-bucket-hakobyan"
-  force_destroy = true
-  versioning {
-    enabled = true
-  }
-}
+#resource "aws_s3_bucket" "terraform_state" {
+#  bucket = "david-terraform-bucket-hakobyan"
+#  force_destroy = true
+#  versioning {
+#    enabled = true
+#  }
+#}
 
 resource "aws_instance" "web_instance" {
   ami           = "ami-06878d265978313ca"
