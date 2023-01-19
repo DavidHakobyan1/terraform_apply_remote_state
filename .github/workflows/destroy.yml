@@ -25,7 +25,14 @@ jobs:
     
     - name: Terraform Destroy
       run: |
-        terraform destroy -target aws_instance.my_ubuntu -auto-approve
+        terraform destroy -target aws_instance.web_instance -auto-approve
+        terraform destroy -target aws_security_group.web_sg -auto-approve
+        terraform destroy -target aws_route_table_association.public_1_rt_a -auto-approve
+        terraform destroy -target aws_route_table.public_rt -auto-approve
+        terraform destroy -target aws_internet_gateway.some_ig -auto-approve
+        terraform destroy -target aws_subnet.some_private_subnet -auto-approve
+        terraform destroy -target aws_subnet.some_public_subnet -auto-approve
+        terraform destroy -target aws_vpc.some_custom_vpc -auto-approve
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         TF_ACTION_WORKING_DIR: '.'
